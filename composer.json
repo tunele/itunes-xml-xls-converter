@@ -1,0 +1,13 @@
+{
+  "autoload": {
+    "psr-4": {"converter\\": "converter/"}
+  },
+
+  "name" : "vernes/PHPReport",
+  "require": {
+    "phpoffice/phpexcel" : "1.8.1",
+    "php" : ">=5.2.0",
+    "ext-xml" : "*",
+    "ext-xmlwriter" : "*"
+  }
+}
