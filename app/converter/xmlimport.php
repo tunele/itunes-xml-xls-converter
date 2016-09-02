@@ -36,7 +36,7 @@
   http://www.apple.com/
 */
 
-namespace converter;
+namespace App\converter;
 
 class xmlimport {
 

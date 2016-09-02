@@ -3,3 +3,4 @@ vendor/
 composer.lock
 index.php
 .env
+_ide_helper.php

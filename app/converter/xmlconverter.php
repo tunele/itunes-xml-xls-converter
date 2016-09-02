@@ -6,16 +6,15 @@
  * Time: 11.11
  */
 
-namespace converter;
+namespace App\converter;
 
 
 class xmlconverter
 {
 
-    public static function convert($filein,$fileout, $exptype = xlsexport::XLS){
-        $filestr = file_get_contents($filein);
+    public static function convert($contents,$fileout, $exptype = xlsexport::XLS){
         $xmlimp = new xmlimport();
-        $ret = $xmlimp->parse($filestr);
+        $ret = $xmlimp->parse($contents);
         if (!$ret) return [$ret,$xmlimp->error] ;
         $tracks = $xmlimp->gettracks();
         $headercells = $xmlimp->getkeys();
@@ -24,6 +23,6 @@ class xmlconverter
                 $exp = xlsexport::export($headercells, $tracks, $fileout);
                 break;
         }
-        return [true, $exp];
+        return [$exp[0], $exp[1]];
     }
 }
