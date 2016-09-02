@@ -96,6 +96,7 @@ class xmlimport {
             ksort($track);
         }
         ksort($this->trackkeys);
+        $this->data['trackkeys'] = $this->trackkeys;
     }
     private function processPlaylists() {
         if ( NULL === $this->data || !isset( $this->data[ 'Playlists' ] ) ) {

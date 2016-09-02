@@ -22,16 +22,17 @@ class UploadController extends Controller {
             if (Input::file('xmlfile')->isValid()) {
                 $fileName = rand(11111,99999);
                 $tmpfile = Input::file('xmlfile')->openFile();
-                $contents = $tmpfile->fread($tmpfile->getSize());
+                $contentsin = $tmpfile->fread($tmpfile->getSize());
                 //Input::file('xmlfile')->move($destinationPath, $fileName); // uploading file to given path
 
                 $filepath = storage_path() . '/uploads/';
                 $fileout = $filepath.$fileName.'.xls';
-                $ret = xmlconverter::convert($contents,$fileout);
+                $ret = xmlconverter::convert($contentsin,$fileout);
+
                 // sending back with message
                 if ($ret[0]) {
                     Session::flash('success', 'Upload successfully');
-                    Session::flash('filepath','/uploads/'. $fileName.'.xls');
+                    Session::flash('fileout', $fileName.'.xls');
                     return Redirect::to('/');
                 } else {
                     // sending back with error message.

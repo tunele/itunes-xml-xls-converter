@@ -28,8 +28,8 @@
 
                                     @if(Session::has('success'))
                                         <div class="alert-box success">
-                                            <h2>{!! Session::get('success') !!}</h2>
-                                            {!!  link_to_asset('download/Libreria.xls', 'File Name') !!}
+                                            <h2>{!! Session::get('success') !!}</h2>filepath
+                                            {!!  link_to_asset('download/'.Session::get('fileout'), 'File Name') !!}
                                         </div>
                                     @endif
                                     <div class="secure">Upload form</div>
