@@ -15,5 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('apply/upload', 'UploadController@upload');
+Route::post('/api/files', 'UploadController@upload');
 Route::get('/download/{file}', 'DownloadController@download');

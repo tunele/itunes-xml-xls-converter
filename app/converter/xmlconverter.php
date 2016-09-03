@@ -13,6 +13,7 @@ class xmlconverter
 {
 
     public static function convert($contentsin,$fileout, $exptype = xlsexport::XLS){
+        ini_set('max_execution_time', 180);
         $xmlimp = new xmlimport();
         $ret = $xmlimp->parse($contentsin);
         if (!$ret) return [$ret,$xmlimp->error] ;
