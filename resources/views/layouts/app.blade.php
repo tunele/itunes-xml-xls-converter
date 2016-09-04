@@ -43,13 +43,23 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    iTunes XML Excel XLS CSV Converter
+                    {!! trans('home.title') !!}
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#"><img width="32" height="32" alt="{{ session('locale') }}"  src="{!! asset('img/' . session('locale') . '-flag.png') !!}" />&nbsp; <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            @foreach ( config('app.languages') as $user)
+                                @if($user !== config('app.locale'))
+                                    <li><a href="{!! url('language') !!}/{{ $user }}"><img width="32" height="32" alt="{{ $user }}" src="{!! asset('img/' . $user . '-flag.png') !!}"></a></li>
+                                @endif
+                            @endforeach
+                        </ul>
+                    </li>
                 </ul>
                 @if (false) <!--commented out for the moment -->
                     <!-- Right Side Of Navbar -->

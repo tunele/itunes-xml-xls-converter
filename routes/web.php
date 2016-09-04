@@ -14,6 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('language/{lang}', 'Controller@language')->where('lang', '[A-Za-z_-]+');
 Route::post('/api/files', 'UploadController@upload');
 Route::get('/download/{file}', 'DownloadController@download');

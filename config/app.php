@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => env('APP_LOCALE', 'en'),
 
     /*
     |--------------------------------------------------------------------------
@@ -89,6 +89,7 @@ return [
     | the language folders that are provided through your application.
     |
     */
+    'languages' => explode(',',env('APP_LANGUAGES', 'en')), //['en', 'fr', 'pt-BR'],
 
     'fallback_locale' => 'en',
 
