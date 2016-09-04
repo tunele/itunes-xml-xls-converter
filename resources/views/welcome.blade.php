@@ -26,7 +26,7 @@
                                 </div>
 
                                 <div id="success"> </div>
-                                {!! Form::submit('Convert', array('class'=>'send-btn')) !!}
+                                {!! Form::submit('Convert', array('class'=>'send-btn', 'id'=>"btnConvert")) !!}
                                 {!! Form::close() !!}
                                 @if(Session::has('success'))
                                     <div class="alert-box success">
@@ -37,33 +37,21 @@
                             </tr>
                             </tbody>
                         </table>
+                        <div id="progresscont" style="display: none;">
+                            <p>Processing file, please wait</p>
+                            <div id="progress" class="progress progress-striped active">
 
-                        <div id="progress" class="progress progress-striped active" style="display: none;">
-                            <div class="progress-bar" style="width: 100%"></div>
-                        </div>
-
-                        <div id="alert-success" class="alert alert-success" style="display: none;">
-                            <button type="button" class="close" data-dismiss="alert">×</button>
-                            <h4>Success</h4>
-                            <p id="message_preview">See the output file preview in the text area below.</p>
-                            <p>Get the converted file clicking the Download button.</p>
+                                <div class="progress-bar" style="width: 100%"></div>
+                            </div>
                         </div>
 
-                        <div id="alert-warning" class="alert alert-warning" style="display: none;">
-                            <button type="button" class="close" data-dismiss="alert">×</button>
-                            <h4>Warning</h4>
-                            <p>Conversion error</p>
-                        </div>
-                        <div id="alert-danger" class="alert alert-danger" style="display: none;">
-                            <button type="button" class="close" data-dismiss="alert">×</button>
-                            <h4>Error</h4>
-                            <p>Server error occured</p>
-                        </div>
+
 
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="{!! asset('js/convert.js?v=1.0.0') !!}"></script>
 @endsection
 
