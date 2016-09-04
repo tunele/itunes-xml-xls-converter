@@ -13,4 +13,6 @@ return [
     'clicktodownload' => 'Click to Download',
     'processingifle' => 'Processing file, please wait',
     'convert' => 'Convert',
+    'tos' => 'Terms of service',
+    'privacy' => 'Privacy',
 ];

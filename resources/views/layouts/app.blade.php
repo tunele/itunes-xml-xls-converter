@@ -86,7 +86,10 @@
     </nav>
 
     @yield('content')
-
+    <footer role="contentinfo">
+        <p class="text-center"><small>Copyright <a href="//www.treagles.it">www.treagles.it</a></small></p>
+        <p class="text-center"><small> <a href="//treagles.it/website/index.php/termini-di-servizio/">{!! trans('home.tos') !!}</a></small><small> <a href="//treagles.it/website/index.php/privacy/">{!! trans('home.privacy') !!}</a></small></p>
+    </footer>
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>

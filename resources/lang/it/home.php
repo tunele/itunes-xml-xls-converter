@@ -24,5 +24,7 @@ return [
     'clicktodownload' => 'Click per Download',
     'processingifle' => 'Sto processando il file, per favore attendi',
     'convert' => 'Converti',
+    'tos' => 'Termini di servizio',
+    'privacy' => 'Privacy',
 
 ];
