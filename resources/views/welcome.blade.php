@@ -9,9 +9,9 @@
                     <div class="panel-body">
                         <img src="{{asset('img/main.png')}}">
                         <p></p>
-                        <p>{!! trans('home.panelbodyp1') !!}</p>
-                        <p>{!! trans('home.panelbodyp2') !!}</p>
-                        <p><i class="fa fa-fw fa-info"></i> {!! trans('home.panelbodyp3') !!}</p>
+                        <h3>{!! trans('home.panelbodyp1') !!}</h3>
+                        <h3>{!! trans('home.panelbodyp2') !!}</h3>
+                        <h3><i class="fa fa-fw fa-info"></i> {!! trans('home.panelbodyp3') !!}</h3>
                         <table class="table">
                             <tbody>
                             <tr>

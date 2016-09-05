@@ -32,14 +32,15 @@
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
-
-
-
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {!! trans('home.title') !!}
-                </a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">{{ trans('home.spannav') }}</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">{{ trans('home.title') }}</a>
             </div>
+
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->

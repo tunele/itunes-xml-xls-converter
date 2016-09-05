@@ -2,7 +2,7 @@
 
 return [
 
-    'title' => 'iTunes XML Excel XLS CSV Converter',
+    'title' => 'iTunes Excel Converter',
     'claim'     => 'Online Convert iTunes XML export files to Excel XLS files',
     'panelbodyp1' => 'Here you can convert iTunes XML export files to the Excel XLS format.',
     'panelbodyp2' => 'To start, please choose the source file and click the Convert button below.',
@@ -15,4 +15,5 @@ return [
     'convert' => 'Convert',
     'tos' => 'Terms of service',
     'privacy' => 'Privacy',
+    'spannav' => 'Toggle navigation',
 ];
