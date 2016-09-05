@@ -10,7 +10,8 @@
         "laravelcollective/html": "5.3.*",
         "phpoffice/phpexcel" : "1.8.1",
         "ext-xml" : "*",
-        "ext-xmlwriter" : "*"
+        "ext-xmlwriter" : "*",
+        "ipunkt/laravel-analytics": "~1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

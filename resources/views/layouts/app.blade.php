@@ -27,6 +27,7 @@
             margin-right: 6px;
         }
     </style>
+    {!! Analytics::render() !!}
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default">

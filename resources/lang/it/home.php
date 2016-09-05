@@ -14,7 +14,7 @@ return [
     */
 
     'title' => 'Convertitore iTunes Excel',
-    'claim'     => 'Converti online il tuo file XML iTunes in un file Excel XLS',
+    'claim'     => 'Converti online il tuo file XML iTunes in formato Excel XLS',
     'panelbodyp1' => 'Qui puoi convertire i tuoi file di export iTuns XML in file Excel XLS, importantissimo ad esempio per inviare il file alla SIAE.',
     'panelbodyp2' => 'Per iniziare, scegli il tuo file XML e fai click sul bottone "Converti".',
     'panelbodyp3' => 'Nota: la dimensione massima del file è di 15Mb.',
