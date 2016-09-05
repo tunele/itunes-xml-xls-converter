@@ -62,8 +62,9 @@
 
     @yield('content')
     <footer role="contentinfo">
+        <p class="text-center"><small>iTunes is a registered trademark of Apple, Inc.,  Excel is a registered trademark of Microsoft, Inc.</small></p>
         <p class="text-center"><small>Copyright <a href="//www.treagles.it">www.treagles.it</a></small></p>
-        <p class="text-center"><small> <a href="//treagles.it/website/index.php/termini-di-servizio/">{!! trans('home.tos') !!}</a></small><small> <a href="//treagles.it/website/index.php/privacy/">{!! trans('home.privacy') !!}</a></small></p>
+        <p class="text-center"><small> <a href="//treagles.it/website/index.php/termini-di-servizio/">{!! trans('home.tos') !!}</a></small><small> | <a href="//treagles.it/website/index.php/privacy/">{!! trans('home.privacy') !!}</a></small></p>
     </footer>
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

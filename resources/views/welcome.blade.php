@@ -7,12 +7,15 @@
                 <div class="panel panel-default">
                     <div class="panel-heading"><h1>{!! trans('home.claim') !!}</h1></div>
                     <div class="panel-body">
+                        <img src="{{asset('img/main.png')}}">
+                        <p></p>
                         <p>{!! trans('home.panelbodyp1') !!}</p>
                         <p>{!! trans('home.panelbodyp2') !!}</p>
                         <p><i class="fa fa-fw fa-info"></i> {!! trans('home.panelbodyp3') !!}</p>
                         <table class="table">
                             <tbody>
                             <tr>
+
                                 {!! Form::open(array('url'=>'api/files','method'=>'POST', 'files'=>true)) !!}
                                 <div class="control-group">
                                     <div class="controls">
