@@ -12,34 +12,47 @@
                         <h3>{!! trans('home.panelbodyp1') !!}</h3>
                         <h3>{!! trans('home.panelbodyp2') !!}</h3>
                         <h3><i class="fa fa-fw fa-info"></i> {!! trans('home.panelbodyp3') !!}</h3>
-                        <table class="table">
-                            <tbody>
-                            <tr>
+                        @if ($errors->any())
+                            <hr/>
+                            <ul class="alert alert-danger">
+                                @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
+                        <div>
+                            <a name="file"></a>
+                            {!! Form::open(array('url'=>'api/files','method'=>'POST', 'files'=>true)) !!}
+                            <div class="control-group">
+                                <div class="controls">
+                                    {!! Form::file('xmlfile') !!}
 
-                                {!! Form::open(array('url'=>'api/files','method'=>'POST', 'files'=>true)) !!}
-                                <div class="control-group">
-                                    <div class="controls">
-                                        {!! Form::file('xmlfile') !!}
-                                        <p class="errors">{!!$errors->first('xmlfile')!!}</p>
-                                        @if(Session::has('error'))
-                                            <p class="errors">{!! trans('home.fileconvertedfailed1') !!}</p>
-                                            <p class="errors">{!! trans('home.fileconvertedfailed2') !!} <a href="//www.treagles.it">www.treagles.it</a></p>
-                                        @endif
-                                    </div>
+                                    @if(Session::has('error'))
+                                        <p class="errors">{!! trans('home.fileconvertedfailed1') !!}</p>
+                                        <p class="errors">{!! trans('home.fileconvertedfailed2') !!} <a href="//www.treagles.it">www.treagles.it</a></p>
+                                    @endif
+                                    @if(Session::has('validationfail'))
+                                        <p class="errors">{!! trans('home.fileconvertedfailed1') !!}</p>
+                                        <p class="errors">{!! trans('home.fileconvertedfailed2') !!} <a href="//www.treagles.it">www.treagles.it</a></p>
+                                    @endif
                                 </div>
+                            </div>
 
-                                <div id="success"> </div>
-                                {!! Form::submit(trans('home.convert'), array('class'=>'send-btn', 'id'=>"btnConvert")) !!}
-                                {!! Form::close() !!}
-                                @if(Session::has('success'))
-                                    <div class="alert-box success">
-                                        <h2>{!! trans('home.fileconvertedok') !!}</h2>
-                                        <h2>{!!  link_to_asset('download/'.Session::get('fileout'), trans('home.clicktodownload')) !!}</h2>
-                                    </div>
-                                @endif
-                            </tr>
-                            </tbody>
-                        </table>
+                            <div id="success"> </div>
+                            {!! Recaptcha::render() !!}
+                            {!! Form::submit(trans('home.convert'), array('class'=>'send-btn', 'id'=>"btnConvert")) !!}
+                            {!! Form::close() !!}
+                            @if(Session::has('success'))
+                                <div class="alert-box success">
+
+                                    <h2>{!! trans('home.fileconvertedok') !!}</h2>
+                                    <h2>{!!  link_to_asset('download/'.Session::get('fileout'), trans('home.clicktodownload')) !!}</h2>
+                                </div>
+                            @endif
+
+                        </div>
+
+
                         <div id="progresscont" style="display: none;">
                             <p>{!! trans('home.processingifle') !!}</p>
                             <div id="progress" class="progress progress-striped active">

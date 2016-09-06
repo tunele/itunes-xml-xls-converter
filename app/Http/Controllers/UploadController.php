@@ -7,15 +7,14 @@ use Session;
 use App\converter\xmlconverter as xmlconverter;
 class UploadController extends Controller {
     public function upload() {
-        // getting all of the post data
-        $file = array('xmlfile' => Input::file('xmlfile'));
         // setting up rules
-        $rules = array('xmlfile' => 'required|max:15000',); //mimes:jpeg,bmp,png and for max size max:10000
+        $rules = array('xmlfile' => 'required|max:15000','g-recaptcha-response' => 'required|recaptcha'); //mimes:jpeg,bmp,png and for max size max:10000
         // doing the validation, passing post data, rules and the messages
-        $validator = Validator::make($file, $rules);
+        $validator = Validator::make(Input::all(), $rules);
         if ($validator->fails()) {
             // send back to the page with the input data and errors
-            return Redirect::to('/')->withInput()->withErrors($validator);
+
+            return Redirect::to('/#file')->withInput()->withErrors($validator);
         }
         else {
             // checking file is valid.
@@ -33,17 +32,17 @@ class UploadController extends Controller {
                 if ($ret[0]) {
                     Session::flash('success', 'Upload successfully');
                     Session::flash('fileout', $fileName.'.xls');
-                    return Redirect::to('/');
+                    return Redirect::to('/#file');
                 } else {
                     // sending back with error message.
                     Session::flash('error', $ret[1]);
-                    return Redirect::to('/');
+                    return Redirect::to('/#file');
                 }
 
             } else {
                 // sending back with error message.
                 Session::flash('error', 'uploaded file is not valid');
-                return Redirect::to('/');
+                return Redirect::to('/#file');
             }
         }
     }

@@ -166,6 +166,7 @@ return [
 
         Collective\Html\HtmlServiceProvider::class,
         Ipunkt\LaravelAnalytics\AnalyticsServiceProvider::class,
+        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -233,7 +234,7 @@ return [
         'HTML'		=> Collective\Html\HtmlFacade::class,
         'Input' => Illuminate\Support\Facades\Input::class,
         'Analytics' => Ipunkt\LaravelAnalytics\AnalyticsFacade::class,
-
+        'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
     ],
 
 ];
