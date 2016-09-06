@@ -9,9 +9,9 @@
                     <div class="panel-body">
                         <img src="{{asset('img/main.png')}}">
                         <p></p>
-                        <h3>{!! trans('home.panelbodyp1') !!}</h3>
-                        <h3>{!! trans('home.panelbodyp2') !!}</h3>
-                        <h3><i class="fa fa-fw fa-info"></i> {!! trans('home.panelbodyp3') !!}</h3>
+                        <h4>{!! trans('home.panelbodyp1') !!}</h4>
+                        <h4>{!! trans('home.panelbodyp2') !!}</h4>
+                        <h4><i class="fa fa-fw fa-info"></i> {!! trans('home.panelbodyp3') !!}</h4>
                         @if ($errors->any())
                             <hr/>
                             <ul class="alert alert-danger">
